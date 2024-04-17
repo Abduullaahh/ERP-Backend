@@ -11,6 +11,10 @@ var customersRouter = require('./routes/getCustomers');
 var employeesRouter = require('./routes/getEmployees');
 var tasksRouter = require('./routes/getTasks');
 var ProductsRouter = require('./routes/getProducts');
+var VendorsRouter = require('./routes/getVendors');
+var RawMaterialsRouter = require('./routes/getRawMaterials');
+var OrdersRouter = require('./routes/getOrders');
+var InventoryRouter = require('./routes/getInvetory');
 const database = require("./database/ERP");
 
 var app = express();
@@ -39,6 +43,10 @@ app.use('/getCustomers', customersRouter);
 app.use('/getEmployees', employeesRouter);
 app.use('/getTasks', tasksRouter);
 app.use('/getProducts', ProductsRouter);
+app.use('/getVendors', VendorsRouter);
+app.use('/getOrders', OrdersRouter);
+app.use('/getInvetory', InventoryRouter);
+app.use('/getRawMaterials', RawMaterialsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
