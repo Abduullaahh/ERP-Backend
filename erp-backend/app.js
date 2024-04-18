@@ -18,6 +18,9 @@ var InventoryRouter = require('./routes/getInvetory');
 var AddVendorRouter = require('./routes/addvendors');
 var AddEmployeeRouter = require('./routes/addemployee');
 var AddTaskRouter=require('./routes/addtask');
+var DeleteEmployeeRouter=require('./routes/deleteemployee');
+var DeleteVendorRouter=require('./routes/deletevendor');
+var DeleteTaskRouter=require('./routes/deletetask');
 const database = require("./database/ERP");
 
 var app = express();
@@ -53,6 +56,9 @@ app.use('/getRawMaterials', RawMaterialsRouter);
 app.use('/addvendors',AddVendorRouter);
 app.use('/addemployee', AddEmployeeRouter);
 app.use('/addtask', AddTaskRouter);
+app.use('/deleteemployee', DeleteEmployeeRouter);
+app.use('/deletevendor', DeleteVendorRouter);
+app.use('/deletetask', DeleteTaskRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
