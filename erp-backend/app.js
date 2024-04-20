@@ -18,9 +18,15 @@ var InventoryRouter = require('./routes/getInvetory');
 var AddVendorRouter = require('./routes/addvendors');
 var AddEmployeeRouter = require('./routes/addemployee');
 var AddTaskRouter=require('./routes/addtask');
+var AddProductRouter=require('./routes/addproduct');
 var DeleteEmployeeRouter=require('./routes/deleteemployee');
 var DeleteVendorRouter=require('./routes/deletevendor');
 var DeleteTaskRouter=require('./routes/deletetask');
+var DeleteProductRouter=require('./routes/deleteproduct');
+var UpdateEmployeeRouter=require('./routes/updateemployee');
+var UpdateTaskRouter=require('./routes/updatetasks');
+var UpdateProductRouter=require('./routes/updateproduct');
+var UpdateVendorRouter=require('./routes/updatevendor');
 const database = require("./database/ERP");
 
 var app = express();
@@ -56,9 +62,15 @@ app.use('/getRawMaterials', RawMaterialsRouter);
 app.use('/addvendors',AddVendorRouter);
 app.use('/addemployee', AddEmployeeRouter);
 app.use('/addtask', AddTaskRouter);
-app.use('/deleteemployee', DeleteEmployeeRouter);
+app.use('/addproduct', AddProductRouter);
+app.use('/deleteemployee', DeleteEmployeeRouter); 
 app.use('/deletevendor', DeleteVendorRouter);
+app.use('/deleteproduct', DeleteProductRouter);
 app.use('/deletetask', DeleteTaskRouter);
+app.use('/updateemployee', UpdateEmployeeRouter);
+app.use('/updatetasks', UpdateTaskRouter);
+app.use('/updateproduct', UpdateProductRouter);
+app.use('/updatevendor', UpdateVendorRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
