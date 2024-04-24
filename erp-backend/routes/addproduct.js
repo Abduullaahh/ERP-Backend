@@ -21,9 +21,26 @@ router.post('/', (req, response) => {
             response.status(500).send('Internal Server Error');
         } else {
             console.log('Product added successfully:', result);
-            response.redirect('http://localhost:3000/products');
+
+            const dataInventory={
+                name:name,
+                quantity:quantity,
+                cost:cost,
+                category:category,
+                type:"Product"
+            };
+
+            connection.query('INSERT INTO Inventory SET ?', dataInventory, (inventoryError, inventoryResult) => {
+                if (inventoryError) {
+                    console.error('Error adding product to Inventory:', inventoryError);
+                    response.status(500).send('Internal Server Error');
+                } else {
+                    console.log('Product added to Inventory successfully:', inventoryResult);
+                    response.redirect('http://localhost:3000/products');
+                }
+            });
         }
     });
     
 });
-module.exports=router;
+module.exports=router

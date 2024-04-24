@@ -12,6 +12,15 @@ router.post('/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
     } else {
         console.log('Product Updated successfully:', result);
+        
+        connection.query('UPDATE Inventory SET quantity = ?, cost = ?, category = ? WHERE name = ?', [quantity, cost, category, name], (error, inventoryResult) => {
+            if (error) {
+              console.error('Error updating inventory:', error);
+            } else {
+              console.log('Inventory Updated successfully:', inventoryResult);
+            }
+          });
+
         res.redirect('http://localhost:3000/products');
     }
     });
