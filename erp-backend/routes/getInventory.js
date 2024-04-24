@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {connection} = require("../database/ERP");
-
+// SELECT * FROM Products UNION SELECT * FROM Raw_Materials
 router.get('/', (req, response) => {
     connection.query('SELECT * FROM Inventory', (err, res) => {
         if (err) {
