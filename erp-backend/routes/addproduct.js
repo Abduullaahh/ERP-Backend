@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const {connection} = require("../database/ERP");
-
 router.post('/', (req, response) => {
     
     const name=req.body.name;
@@ -21,24 +20,7 @@ router.post('/', (req, response) => {
             response.status(500).send('Internal Server Error');
         } else {
             console.log('Product added successfully:', result);
-
-            const dataInventory={
-                name:name,
-                quantity:quantity,
-                cost:cost,
-                category:category,
-                type:"Product"
-            };
-
-            connection.query('INSERT INTO Inventory SET ?', dataInventory, (inventoryError, inventoryResult) => {
-                if (inventoryError) {
-                    console.error('Error adding product to Inventory:', inventoryError);
-                    response.status(500).send('Internal Server Error');
-                } else {
-                    console.log('Product added to Inventory successfully:', inventoryResult);
-                    response.redirect('http://localhost:3000/products');
-                }
-            });
+            response.redirect('http://localhost:3000/products');
         }
     });
     

@@ -26,7 +26,7 @@ const express = require('express');
 const router = express.Router();
 const { connection } = require('../database/ERP');
 
-router.delete('/:id/:name', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = req.params.id;
   const name = req.params.name;
 
@@ -36,18 +36,6 @@ router.delete('/:id/:name', (req, res) => {
       res.status(500).json({ error: 'Error deleting Product' });
     } else {
       res.status(200).json({ message: 'Product Deleted successfully' });
-      // Check if name is provided in the request body
-      if (name) {
-        connection.query('DELETE FROM Inventory WHERE name = ?', [name], (error, inventoryResult) => {
-          if (error) {
-            console.error('Error deleting inventory:', error);
-          } else {
-            console.log('Inventory Deleted successfully:', inventoryResult);
-          }
-        });
-      } else {
-        console.error('Name parameter is missing in the request body.');
-      }
     }
   });
 });
