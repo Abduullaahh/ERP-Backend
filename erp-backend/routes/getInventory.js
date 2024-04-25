@@ -25,7 +25,7 @@ router.get('/', (req, response) => {
     const sqlQuery = `
         SELECT id AS "Item ID", name AS "Item Name", quantity AS "Quantity", cost AS "Unit Cost", category AS "Category", 'Product' AS "Type" FROM Products 
         UNION ALL 
-        SELECT id AS "Item ID", name AS "Item Name", quantity AS "Quantity", cost AS "Unit Cost", category AS "Category", 'Raw Material' AS "Type" FROM Raw_Materials
+        SELECT id AS "Item ID", name AS "Item Name", quantity AS "Quantity", cost AS "Unit Cost", totalcost AS "Total Cost", 'Raw Material' AS "Type" FROM Raw_Materials
     `;
     connection.query(sqlQuery, (err, res) => {
         if (err) {

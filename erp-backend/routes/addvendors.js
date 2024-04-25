@@ -4,13 +4,15 @@ const {connection} = require("../database/ERP");
 router.post('/',(req,res)=>{
     const name=req.body.name;
     const materials=req.body.reqMaterial;
+    const unitcost=req.body.unitCost;
     const phone=req.body.contact;
     const data={
         name:name,
         materials:materials,
         contact:phone,
+        unitcost:unitcost
     }
-    console.log("Data received: ",data);
+    // console.log("Data received: ",data);
     connection.query('INSERT INTO Vendors SET ?',data,(error,result)=>{
         if(error)
         {
