@@ -29,6 +29,7 @@ var UpdateEmployeeRouter=require('./routes/updateemployee');
 var UpdateTaskRouter=require('./routes/updatetasks');
 var UpdateProductRouter=require('./routes/updateproduct');
 var UpdateVendorRouter=require('./routes/updatevendor');
+var UpdateOrderRouter=require('./routes/updateOrder');
 var LoginAuthenticationRouter=require('./routes/loginAuthentication');
 const database = require("./database/ERP");
 
@@ -76,6 +77,7 @@ app.use('/updateemployee', UpdateEmployeeRouter);
 app.use('/updatetasks', UpdateTaskRouter);
 app.use('/updateproduct', UpdateProductRouter);
 app.use('/updatevendor', UpdateVendorRouter);
+app.use('/updateOrder', UpdateOrderRouter);
 app.use('/loginAuthentication', LoginAuthenticationRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
