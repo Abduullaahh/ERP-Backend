@@ -10,7 +10,7 @@ router.get('/', (req, response) => {
         } else {
             response.send(res);
             console.log('Data Read')
-            console.log(res)
+            // console.log(res)
         }
     });
 });
