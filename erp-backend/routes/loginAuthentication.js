@@ -3,8 +3,8 @@ const router = express.Router();
 const { connection } = require("../database/ERP");
 
 router.post('/', (req, response) => {
-    const { ID } = req.body;
-    connection.query('SELECT * FROM Users WHERE ID = ?', [ID], (err, res) => {
+    const { username } = req.body;
+    connection.query('SELECT * FROM Users WHERE username = ?', [username], (err, res) => {
         if (err) {
             console.error('Error executing SQL query:', err);
             response.status(500).send('Internal Server Error');
