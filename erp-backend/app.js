@@ -38,6 +38,9 @@ var ResetRolesRouter=require('./routes/resetRoles');
 var DashboardUserCheckRouter=require('./routes/dashboardUserCheck');
 var SetRolesRouter=require('./routes/setRole');
 var DeleteRatingRouter=require('./routes/deleteRating');
+var RequestRawMaterialsRouter=require('./routes/requestRawMaterials');
+var GetRequestsRouter=require('./routes/getRequests');
+var UpdateRequestsRouter=require('./routes/updateRequests');
 const database = require("./database/ERP");
 
 var app = express();
@@ -93,6 +96,9 @@ app.use('/resetRoles', ResetRolesRouter);
 app.use('/dashboardUserCheck', DashboardUserCheckRouter);
 app.use('/setRole', SetRolesRouter);
 app.use('/deleteRating', DeleteRatingRouter);
+app.use('/getRequests', GetRequestsRouter);
+app.use('/requestRawMaterials', RequestRawMaterialsRouter);
+app.use('/updateRequests', UpdateRequestsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
