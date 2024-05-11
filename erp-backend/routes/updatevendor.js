@@ -14,7 +14,7 @@ router.post('/:id', async (req, res) => {
       res.status(500).send('Internal Server Error');
     } else {
       console.log('Vendor Updated successfully:', result);
-      res.redirect('http://localhost:3000/vendors');
+      res.redirect('http://enterprise-resource-planner.netlify.app/vendors');
     }
   });
 });
