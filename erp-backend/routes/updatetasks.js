@@ -12,7 +12,7 @@ router.post('/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
     } else {
         console.log('Employee Updated successfully:', result);
-        res.redirect('http://localhost:3000/employees');
+        res.redirect('http://enterprise-resource-planner.netlify.app/employees');
     }
     });
 });
