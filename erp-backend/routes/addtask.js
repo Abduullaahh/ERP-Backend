@@ -20,7 +20,7 @@ router.post('/', (req, response) => {
             response.status(500).send('Internal Server Error');
         } else {
             console.log('Task added successfully:', result);
-            response.redirect('http://localhost:3000/tasks');
+            response.redirect('http://enterprise-resource-planner.netlify.app/tasks');
         }
     });
     
