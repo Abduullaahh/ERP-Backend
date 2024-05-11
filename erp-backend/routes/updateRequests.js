@@ -15,7 +15,7 @@ router.post('/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
       } else {
         console.log('Order Updated successfully:', result);
-        res.redirect('http://localhost:3000/orders');
+        res.redirect('http://enterprise-resource-planner.netlify.app/orders');
       }
     }
   );
