@@ -20,7 +20,7 @@ router.post('/',(req,res)=>{
         }else
         {
             console.log("Vendor Added");
-            res.redirect('http://localhost:3000/vendors');
+            res.redirect('http://enterprise-resource-planner.netlify.app/vendors');
         }
     })
 })
