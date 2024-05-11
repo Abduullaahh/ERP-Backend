@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
         }else
         {
             console.log("Product Rating Added");
-            res.redirect('http://localhost:3000/RateProduct');
+            res.redirect('http://enterprise-resource-planner.netlify.app/RateProduct');
         }
     })
 });
