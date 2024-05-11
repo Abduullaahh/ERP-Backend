@@ -21,7 +21,7 @@ router.post('/', (req, response) => {
             response.status(500).send('Internal Server Error');
         } else {
             console.log('Employee added successfully:', result);
-            response.redirect('http://localhost:3000/employees');
+            response.redirect('http://enterprise-resource-planner.netlify.app/employees');
         }
     });
     
