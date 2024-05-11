@@ -20,7 +20,7 @@ router.post('/', (req, response) => {
             response.status(500).send('Internal Server Error');
         } else {
             console.log('Product added successfully:', result);
-            response.redirect('http://localhost:3000/products');
+            response.redirect('http://enterprise-resource-planner.netlify.app/products');
         }
     });
     
